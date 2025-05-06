@@ -1,6 +1,6 @@
 {
   "name": "notes-api",
-  "homepage": "https://Bhalsodnikunj.github.io/Node.js-and-Express.js-notes-api-Month-3-Week-9-Webiste",
+  "homepage": "https://Bhalsodnikunj.github.io/notes-api-webiste",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
