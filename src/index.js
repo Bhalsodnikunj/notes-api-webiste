@@ -1,24 +1,6 @@
-const express = require('express');
-const app = express();
-const PORT = 3000;
+import React from 'react';
 
-app.use(express.json());
+import App from './App';
 
-let notes = [];
-
-// GET all notes
-app.get('/api/notes', (req, res) => {
-  res.json(notes);
-});
-
-// POST a new note
-app.post('/api/notes', (req, res) => {
-  const note = req.body;
-  note.id = Date.now(); // simple ID
-  notes.push(note);
-  res.status(201).json(note);
-});
-
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);

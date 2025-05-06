@@ -1,6 +1,6 @@
 {
-  "name": "notes-api",
-  "homepage": "https://Bhalsodnikunj.github.io/Node.js-and-Express.js-notes-api-Webiste",
+  "name": "notes-api-webiste",
+  "homepage": "https://Bhalsodnikunj.github.io/notes-api-webiste",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -14,7 +14,9 @@
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "fs-extra": "^11.3.0",
+    "gh-pages": "^6.3.0",
     "nodemon": "^3.1.10",
+    "querystring-es3": "^0.2.1",
     "react-scripts": "^5.0.1"
   },
   "browserslist": {
