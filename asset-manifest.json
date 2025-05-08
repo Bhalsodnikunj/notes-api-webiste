@@ -1,12 +1,10 @@
 {
   "files": {
-    "main.css": "/notes-api-webiste/static/css/main.31d6cfe0.css",
-    "main.js": "/notes-api-webiste/static/js/main.05b4bcbe.js",
+    "main.js": "/notes-api-webiste/static/js/main.0a7170a9.js",
     "index.html": "/notes-api-webiste/index.html",
-    "main.05b4bcbe.js.map": "/notes-api-webiste/static/js/main.05b4bcbe.js.map"
+    "main.0a7170a9.js.map": "/notes-api-webiste/static/js/main.0a7170a9.js.map"
   },
   "entrypoints": [
-    "static/css/main.31d6cfe0.css",
-    "static/js/main.05b4bcbe.js"
+    "static/js/main.0a7170a9.js"
   ]
 }
