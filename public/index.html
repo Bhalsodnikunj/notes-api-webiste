@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notes App</title>
+ <style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input, textarea {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background: #0056b3;
+  }
+  
+  .note {
+    background: #eee;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  .note button {
+    margin-left: 10px;
+    background: #dc3545;
+  }
+  
+ </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Notes App</h1>
+    <form id="note-form">
+      <input type="text" id="title" placeholder="Title" required />
+      <textarea id="content" placeholder="Content" required></textarea>
+      <button type="submit">Add Note</button>
+    </form>
+    <div id="notes"></div>
+  </div>
+  <script>
+    const API_URL = "http://localhost:3000/api/notes";
+
+const form = document.getElementById("note-form");
+const notesDiv = document.getElementById("notes");
+
+async function fetchNotes() {
+  const res = await fetch(API_URL);
+  const notes = await res.json();
+  displayNotes(notes);
+}
+
+function displayNotes(notes) {
+  notesDiv.innerHTML = "";
+  notes.forEach(note => {
+    const noteEl = document.createElement("div");
+    noteEl.className = "note";
+    noteEl.innerHTML = `
+      <h3>${note.title}</h3>
+      <p>${note.content}</p>
+      <button onclick="deleteNote(${note.id})">Delete</button>
+    `;
+    notesDiv.appendChild(noteEl);
+  });
+}
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const title = document.getElementById("title").value;
+  const content = document.getElementById("content").value;
+  await fetch(API_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ title, content })
+  });
+  form.reset();
+  fetchNotes();
+});
+
+async function deleteNote(id) {
+  await fetch(`${API_URL}/${id}`, { method: "DELETE" });
+  fetchNotes();
+}
+
+fetchNotes();
+
+  </script>
+</body>
+</html>
