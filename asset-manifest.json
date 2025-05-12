@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/notes-api-webiste/static/js/main.0a7170a9.js",
+    "main.js": "/notes-api-webiste/static/js/main.e65ffac2.js",
     "index.html": "/notes-api-webiste/index.html",
-    "main.0a7170a9.js.map": "/notes-api-webiste/static/js/main.0a7170a9.js.map"
+    "main.e65ffac2.js.map": "/notes-api-webiste/static/js/main.e65ffac2.js.map"
   },
   "entrypoints": [
-    "static/js/main.0a7170a9.js"
+    "static/js/main.e65ffac2.js"
   ]
 }
